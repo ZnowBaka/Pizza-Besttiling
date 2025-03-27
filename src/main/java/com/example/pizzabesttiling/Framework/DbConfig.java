@@ -11,7 +11,7 @@ public class DbConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/pizzabesttiling");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/pizza_db");
         dataSource.setUsername("root");
         dataSource.setPassword("root");
         return dataSource;

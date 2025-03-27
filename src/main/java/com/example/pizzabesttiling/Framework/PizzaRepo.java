@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -14,12 +15,14 @@ public class PizzaRepo {
     public PizzaRepo(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
     public List<Pizza> getAll() {
-        String sql = "select * from pizza";
+        String sql = "select id, img_url, name, description, price from pizzas";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Pizza.class));
     }
+
     public Pizza getById(int id) {
-        String sql = "select * from pizza where id = ?";
+        String sql = "select * from pizzas where id = ?";
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Pizza.class), id);
     }
 }
