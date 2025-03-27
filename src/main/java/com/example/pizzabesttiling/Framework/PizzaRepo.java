@@ -21,6 +21,10 @@ public class PizzaRepo {
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Pizza.class));
     }
 
+    public Pizza getByName(String pizzaName) {
+        String sql = "select * from pizzas where name = ?";
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Pizza.class), pizzaName);
+    }
     public Pizza getById(int id) {
         String sql = "select * from pizzas where id = ?";
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Pizza.class), id);
