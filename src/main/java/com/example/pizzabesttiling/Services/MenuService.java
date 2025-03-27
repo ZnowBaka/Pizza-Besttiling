@@ -12,15 +12,16 @@ import java.util.List;
 
 
 @Service
-@NoArgsConstructor
 
 public class MenuService {
     private final Menu menu = new Menu();
     private PizzaRepo pizzaRepo;
 
+
     public MenuService(PizzaRepo pizzaRepo) {
         this.pizzaRepo = pizzaRepo;
     }
+
 
 
     public void addAllToMenu() {
