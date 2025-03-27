@@ -26,7 +26,7 @@
             <td th:text="${pizza.getDescription}"></td>
             <td th:text="${pizza.getPrice}"></td>
             <td>
-            <--- "Method 'POST' is not supported." WHYYYYY --->
+            <1--- "Method 'POST' is not supported." WHYYYYY --->
                 <form action="/pizza" method="post">
                     <input type="number" step="1" hidden th:value="${pizza.getPizzaId}"></input>
                     <button type="submit">Add</button>
